@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "eth-lst",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "build": "sentio build",
@@ -11,10 +11,10 @@
     "postinstall": "sentio gen"
   },
   "dependencies": {
-    "@sentio/sdk": "^2.52.0"
+    "@sentio/sdk": "^2.53.0"
   },
   "devDependencies": {
-    "@sentio/cli": "^2.23.0",
+    "@sentio/cli": "^2.23.3",
     "typescript": "^5.5.2"
   }
 }
