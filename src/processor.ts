@@ -5,3 +5,5 @@ export function init() {
     initEigenPodManagerEventsProcessor()
     initEigenPodBeaconProxyProcessor()
 }
+
+init()
