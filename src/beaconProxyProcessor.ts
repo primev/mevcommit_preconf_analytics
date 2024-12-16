@@ -3,9 +3,10 @@ import { EthChainId, EthContext } from "@sentio/sdk/eth";
 
 
 export function initEigenPodBeaconProxyProcessor(
-    // address: string = '0xa3525E19A1Fc510b783F419342d45b4484D57F54', // eigenpod beacon proxy address (didnt work)
-    address: string = '0xEF0e1e9bdEe12647D444F1d40f0e8C582F59F282', // eigenpod owner
-    startBlock: number = 21354181
+  // TODO - Dynamically query a list of addresses 
+  // This is a single eigenpod owner. Need to get all eigenpod owners and then query all those addresses.
+    address: string = '0x0F389979fF45990c2C1B8D1989ab0D9D76f7951d', 
+    startBlock: number = 20735804
   ) {
     return EigenPodProcessor.bind({
         address: address,
