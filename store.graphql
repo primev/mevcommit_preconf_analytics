@@ -1,0 +1,8 @@
+type Validator @entity {
+  id: String!
+  validatorPubKey: String!
+  podOwner: String!
+  eigenPod: String!
+  isRegistered: Boolean!
+  isPodDeployed: Boolean!
+}

@@ -1,4 +1,5 @@
 import { MevCommitAVSProcessor } from "./types/eth/mevcommitavs.js";
+import { Validator } from './schema/store.js';
 
 export function initMevCommitAVSProcessor() {
     return MevCommitAVSProcessor.bind({
@@ -9,5 +10,17 @@ export function initMevCommitAVSProcessor() {
             podOwner: event.args.podOwner,
             validatorPubKey: event.args.validatorPubKey
         });
+        
+        // Create or update the Validator entity
+        const validator = new Validator({
+            id: event.args.validatorPubKey,
+            validatorPubKey: event.args.validatorPubKey,
+            podOwner: event.args.podOwner,
+            eigenPod: "",           // Not known yet
+            isRegistered: true,
+            isPodDeployed: false    // Not known yet
+        });
+        
+        await ctx.store.upsert(validator);
     });
 }
