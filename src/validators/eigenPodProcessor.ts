@@ -8,7 +8,7 @@ import { EthChainId, EthContext } from "@sentio/sdk/eth";
 import { IEigenPodManagerEventsProcessor } from '../types/eth/ieigenpodmanagerevents.js'
 
 export function initEigenPodManagerEventsProcessor(
-  address: string = '0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338', // eigenpod contract
+  address: string = '0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338', // eigenpodManager contract
   startBlock: number = 16500000
 ) {
   return IEigenPodManagerEventsProcessor.bind({

@@ -2,6 +2,7 @@ import { EigenPodProcessor } from '../types/eth/eigenpod.js'
 import { EthChainId, EthContext } from "@sentio/sdk/eth";
 
 const eigenPod_addresses: string[] = [
+    // Note this list has to be updated manually over time to update onCallVerifyWithdrawalCredentials() calls. 
     '0x5993A0c83dCa56715e82b6dF5b1597EfD6e50885', // primev registered
     '0x0F389979fF45990c2C1B8D1989ab0D9D76f7951d'  // primev registered
 ];
