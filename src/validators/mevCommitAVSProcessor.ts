@@ -1,4 +1,4 @@
-import { MevCommitAVSProcessor } from "./types/eth/mevcommitavs.js";
+import { MevCommitAVSProcessor } from "../types/eth/mevcommitavs.js";
 
 export function initMevCommitAVSProcessor() {
     return MevCommitAVSProcessor.bind({

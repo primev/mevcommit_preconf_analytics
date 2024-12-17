@@ -1,7 +1,11 @@
-import { EigenPodProcessor } from './types/eth/eigenpod.js'
+import { EigenPodProcessor } from '../types/eth/eigenpod.js'
 import { EthChainId, EthContext } from "@sentio/sdk/eth";
 
-const eigenPod_addresses: string[] = ['0x5993A0c83dCa56715e82b6dF5b1597EfD6e50885', '0x0F389979fF45990c2C1B8D1989ab0D9D76f7951d'];
+const eigenPod_addresses: string[] = [
+    '0x5993A0c83dCa56715e82b6dF5b1597EfD6e50885', // primev registered
+    '0x0F389979fF45990c2C1B8D1989ab0D9D76f7951d'  // primev registered
+];
+
 export function initEigenPodBeaconProxyProcessor(
     addresses: string[] = eigenPod_addresses,  // Use the array of addresses
     startBlock: number = 19688266

@@ -1,6 +1,6 @@
-import { initEigenPodManagerEventsProcessor } from './eigenPodProcessor.js'
-import { initEigenPodBeaconProxyProcessor } from './beaconProxyProcessor.js'
-import { initMevCommitAVSProcessor } from './mevCommitAVSProcessor.js'
+import { initEigenPodManagerEventsProcessor } from './validators/eigenPodProcessor.js'
+import { initEigenPodBeaconProxyProcessor } from './validators/beaconProxyProcessor.js'
+import { initMevCommitAVSProcessor } from './validators/mevCommitAVSProcessor.js'
 
 // eigenpod events
 initEigenPodManagerEventsProcessor()

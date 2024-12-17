@@ -3,13 +3,13 @@ import {
   NewTotalSharesEvent,
   PodDeployedEvent,
   PodSharesUpdatedEvent
-} from './types/eth/ieigenpodmanagerevents.js'
+} from '../types/eth/ieigenpodmanagerevents.js'
 import { EthChainId, EthContext } from "@sentio/sdk/eth";
-import { IEigenPodManagerEventsProcessor } from './types/eth/ieigenpodmanagerevents.js'
+import { IEigenPodManagerEventsProcessor } from '../types/eth/ieigenpodmanagerevents.js'
 
 export function initEigenPodManagerEventsProcessor(
   address: string = '0x91E677b07F7AF907ec9a428aafA9fc14a0d3A338', // eigenpod contract
-  startBlock: number = 15445564
+  startBlock: number = 16500000
 ) {
   return IEigenPodManagerEventsProcessor.bind({
     address: address,
