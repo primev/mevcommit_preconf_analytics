@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "eth-lst",
+  "name": "mevcommit",
   "version": "1.2.0",
   "type": "module",
   "scripts": {
