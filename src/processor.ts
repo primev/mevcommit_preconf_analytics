@@ -7,6 +7,8 @@ import { initL1GatewayProcessor } from './bridge/l1GatewayProcessor.js'
 import { initSettlementGatewayProcessor } from './bridge/settlementBridgeProcessor.js'
 import { initOracleProcessor } from './mevcommit_core/oracleProcessor.js'
 import { initPreconfManagerProcessor } from './mevcommit_core/preconfManagerProcessor.js'
+import { initProviderRegistryProcessor } from './mevcommit_core/providerRegistryProcessor.js'
+import { initBidderRegistryProcessor } from './mevcommit_core/bidderRegistryProcessor.js'
 
 GLOBAL_CONFIG.execution = {
     skipStartBlockValidation: true,
@@ -26,3 +28,5 @@ initL1GatewayProcessor()
 initSettlementGatewayProcessor()
 initOracleProcessor()
 initPreconfManagerProcessor()
+initProviderRegistryProcessor()
+initBidderRegistryProcessor() 
