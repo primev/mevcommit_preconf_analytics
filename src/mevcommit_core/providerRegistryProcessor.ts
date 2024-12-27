@@ -2,12 +2,15 @@ import { EthChainId } from "@sentio/sdk/eth";
 import { ProviderRegistryProcessor } from '../types/eth/providerregistry.js';
 
 
-export function initProviderRegistryProcessor() {
+export function initProviderRegistryProcessor(
+  address: string,
+  network: EthChainId
+) {
     ProviderRegistryProcessor.bind({
-    address: '0x1C2a592950E5dAd49c0E2F3A402DCF496bdf7b67', // 0.8.0
-    network: EthChainId.METIS   // overwrite metis chainID for mev-commit data
-  })
-  .onEventBLSKeyAdded(async (event, ctx) => {   
+      address,
+      network
+    })
+    .onEventBLSKeyAdded(async (event, ctx) => {   
         ctx.eventLogger.emit('provider_registry_bls_key_added', {
           provider: event.args.provider,
           blsPublicKey: event.args.blsPublicKey,

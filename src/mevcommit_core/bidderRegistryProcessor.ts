@@ -1,11 +1,13 @@
 import { BidderRegistryProcessor} from '../types/eth/internal/bidderregistry-processor.js'
 import { EthChainId } from "@sentio/sdk/eth";
 
-
-export const initBidderRegistryProcessor = () => {
+export const initBidderRegistryProcessor = (
+  address: string,
+  network: EthChainId
+) => {
     BidderRegistryProcessor.bind({
-        address: '0x948eCD70FaeF6746A30a00F30f8b9fB2659e4062', // 0.8.0
-        network: EthChainId.METIS   // overwrite metis chainID for mev-commit data
+        address,
+        network
       })
       .onEventBidderRegistered(async (event, ctx) => {
         ctx.eventLogger.emit('bidder_registry_bidder_registered', {

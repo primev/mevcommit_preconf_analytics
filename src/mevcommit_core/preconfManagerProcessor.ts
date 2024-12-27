@@ -1,11 +1,14 @@
 import { EthChainId } from "@sentio/sdk/eth";
 import { PreconfManagerProcessor } from '../types/eth/preconfmanager.js';
 
-export function initPreconfManagerProcessor() {
+export function initPreconfManagerProcessor(
+  address: string,
+  network: EthChainId
+) {
     PreconfManagerProcessor.bind({
-    address: '0xa254D1A10777e358B0c2e945343664c7309A0D9d', // 0.8.0
-    network: EthChainId.METIS   // overwrite metis chainID for mev-commit data
-  })
+      address,
+      network
+    })
     .onEventUnopenedCommitmentStored(async (event, ctx) => {
       ctx.eventLogger.emit('preconf_manager_unopened_commitments', {
         commitmentDigest: event.args.commitmentDigest,

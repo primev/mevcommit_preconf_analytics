@@ -2,10 +2,13 @@ import { EthChainId, EthContext } from "@sentio/sdk/eth";
 import { L1GatewayProcessor } from '../types/eth/l1gateway.js';
 import { TransferFinalizedEvent, TransferInitiatedEvent } from '../types/eth/internal/L1Gateway.js';
 
-export function initL1GatewayProcessor() {
+export function initL1GatewayProcessor(
+  address: string,
+  network: EthChainId
+) {
   L1GatewayProcessor.bind({
-    address: '0x567f0f6d4f7A306c9824d5Ffd0E26f39682cDd7c', // L1Gatway contract on Holesky v0.8.0
-    network: EthChainId.HOLESKY
+    address,
+    network
   })
     .onEventTransferFinalized(async (event: TransferFinalizedEvent, ctx: EthContext) => {
       ctx.eventLogger.emit('l1gatway_transfer_finalized', {

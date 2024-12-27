@@ -1,8 +1,13 @@
 import { MevCommitAVSProcessor } from "../types/eth/mevcommitavs.js";
+import { EthChainId } from "@sentio/sdk/eth";
 
-export function initMevCommitAVSProcessor() {
+export function initMevCommitAVSProcessor(
+  address: string,
+  network: EthChainId
+) {
     return MevCommitAVSProcessor.bind({
-        address: '0xBc77233855e3274E1903771675Eb71E602D9DC2e'
+        address,
+        network
     })
     .onEventValidatorRegistered(async (event, ctx) => {
         ctx.eventLogger.emit("mevcommit_avs_validator_registered", {
