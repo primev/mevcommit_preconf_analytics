@@ -16,6 +16,7 @@ GLOBAL_CONFIG.execution = {
     skipStartBlockValidation: true,
   };
 
+  
 // eigenpod events
 initEigenPodManagerEventsProcessor()
 initEigenPodBeaconProxyProcessor()
