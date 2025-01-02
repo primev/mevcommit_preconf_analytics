@@ -56,3 +56,9 @@ initBidderRegistryProcessor(
   '0x948eCD70FaeF6746A30a00F30f8b9fB2659e4062',
   EthChainId.METIS
 ) 
+
+// mainnet
+initL1GatewayProcessor(
+  '0xDBf24cafF1470a6D08bF2FF2c6875bafC60Cf881',
+  EthChainId.ETHEREUM
+)
