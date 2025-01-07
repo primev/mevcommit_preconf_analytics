@@ -33,13 +33,13 @@ initL1GatewayProcessor(
   EthChainId.HOLESKY
 )
 
-// mev-commit l1 bridge v.0.8.0
-initSettlementGatewayProcessor(
-  '0xFaF6F0d4bbc7bC33a4b403b274aBb82d0E794202',
-  EthChainId.METIS
+// mainnet
+initL1GatewayProcessor(
+  '0xDBf24cafF1470a6D08bF2FF2c6875bafC60Cf881',
+  EthChainId.ETHEREUM
 )
 
-// mev-commit core contracts v.0.8.0
+// mev-commit core testnet v.0.8.0
 initOracleProcessor(
   '0xCd27C2Dc26d37Bb17686F709Db438D3Dc546437C',
   EthChainId.METIS
@@ -57,8 +57,32 @@ initBidderRegistryProcessor(
   EthChainId.METIS
 ) 
 
-// mainnet
-initL1GatewayProcessor(
-  '0xDBf24cafF1470a6D08bF2FF2c6875bafC60Cf881',
-  EthChainId.ETHEREUM
+initSettlementGatewayProcessor(
+  '0xFaF6F0d4bbc7bC33a4b403b274aBb82d0E794202',
+  EthChainId.METIS
+)
+
+
+
+// mev-commit core mainnet
+initOracleProcessor(
+  '0xa1aaCA1e4583dB498D47f3D5901f2B2EB49Bd8f6',
+  EthChainId.MOONBEAM
+)
+initPreconfManagerProcessor(
+  '0x9fF03b7Ca0767f069e7AA811E383752267cc47Ec',
+  EthChainId.MOONBEAM
+)
+initProviderRegistryProcessor(
+  '0xb772Add4718E5BD6Fe57Fb486A6f7f008E52167E',
+  EthChainId.MOONBEAM
+)
+initBidderRegistryProcessor(
+  '0xC973D09e51A20C9Ab0214c439e4B34Dbac52AD67',
+  EthChainId.MOONBEAM
+) 
+
+initSettlementGatewayProcessor(
+  '0x138c60599946280e5a2DCc1f553B8f0cC0554E03',
+  EthChainId.MOONBEAM
 )

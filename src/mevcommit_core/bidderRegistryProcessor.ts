@@ -84,13 +84,17 @@ export const initBidderRegistryProcessor = (
         const name = 'bidder_registry_funds_retrieved'
         const {
           bidder,
-          amount
+          amount,
+          commitmentDigest,
+          window
         } = event.args;
         ctx.eventLogger.emit(name, {
           project: project,
           eventType: FUNDS_RETRIEVED_EVENT,
           bidder,
           amount: amount,
+          window,
+          commitmentDigest,
           from: ctx.transaction?.from,
           gas_price: ctx.transaction?.gasPrice,
           max_priority_gas: ctx.transaction?.maxPriorityFeePerGas,
@@ -102,13 +106,19 @@ export const initBidderRegistryProcessor = (
         const name = 'bidder_registry_funds_rewarded'
         const {
           bidder,
-          amount
+          amount,
+          provider,
+          window,
+          commitmentDigest
         } = event.args;
         ctx.eventLogger.emit(name, {
           project: project,
           eventType: FUNDS_REWARDED_EVENT,
           bidder,
+          provider,
+          window: window,
           amount: amount,
+          commitmentDigest,
           from: ctx.transaction?.from,
           gas_price: ctx.transaction?.gasPrice,
           max_priority_gas: ctx.transaction?.maxPriorityFeePerGas,

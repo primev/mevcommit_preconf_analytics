@@ -3,5 +3,6 @@ project: mevcommit
 networkOverrides:
 - chain: '1088' # override metis network
   host: 'http://103.219.170.137:8565'
-  # host: 'https://mev-commit.rpc.hypersync.xyz'
-  # host: 'Https://holesky.rpc.hypersync.xyz'
+
+- chain: '1284' # override MOONBEAM network
+  host: 'http://69.67.150.147:8545'
