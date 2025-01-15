@@ -10,6 +10,7 @@ import { initPreconfManagerProcessor } from './mevcommit_core/preconfManagerProc
 import { initProviderRegistryProcessor } from './mevcommit_core/providerRegistryProcessor.js'
 import { initBidderRegistryProcessor } from './mevcommit_core/bidderRegistryProcessor.js'
 import { EthChainId } from '@sentio/sdk/eth'
+import { initBlockTrackerProcessor } from './mevcommit_core/blockTrackerProcessor.js'
 
 GLOBAL_CONFIG.execution = {
   // required to bypass a false positive error not recognizing an out of supported network endpoint as an archive node. 
@@ -62,6 +63,10 @@ initSettlementGatewayProcessor(
   EthChainId.METIS
 )
 
+initBlockTrackerProcessor(
+  '0x0b3b6Cf113959214E313d6Ad37Ad56831acb1776',
+  EthChainId.METIS
+)
 
 
 // mev-commit core mainnet
@@ -84,5 +89,10 @@ initBidderRegistryProcessor(
 
 initSettlementGatewayProcessor(
   '0x138c60599946280e5a2DCc1f553B8f0cC0554E03',
+  EthChainId.MOONBEAM
+)
+
+initBlockTrackerProcessor(
+  '0x0DA2a367C51f2a34465ACd6AE5d8A48385e9cB03',
   EthChainId.MOONBEAM
 )
