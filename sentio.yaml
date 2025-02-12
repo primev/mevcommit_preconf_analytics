@@ -1,4 +1,4 @@
-project: mevcommit
+project: primev/mevcommit
 
 networkOverrides:
 - chain: '1088' # override metis network, this is actually mev-commit chain testnet (chain=17864)
