@@ -1,8 +1,8 @@
 project: mevcommit
 
 networkOverrides:
-- chain: '1088' # override metis network
+- chain: '1088' # override metis network, this is actually mev-commit chain testnet (chain=17864)
   host: 'http://103.219.170.137:8565'
 
-- chain: '1284' # override MOONBEAM network
+- chain: '1284' # override MOONBEAM network, this is actually mev-commit chain mainnet (chain=8855)
   host: 'http://69.67.150.147:8545'
