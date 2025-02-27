@@ -6,6 +6,7 @@ export const BIDDER_WITHDRAWAL_EVENT = "BidderWithdrawal";
 export const BLOCK_TRACKER_UPDATED_EVENT = "BlockTrackerUpdated";
 export const FUNDS_RETRIEVED_EVENT = "FundsRetrieved";
 export const FUNDS_REWARDED_EVENT = "FundsRewarded";
+export const FEE_TRANSFER_EVENT = "FeeTransfer";
 export const project = "bidder_registry";
 
 const ethconfig: EthFetchConfig = {
@@ -126,4 +127,22 @@ export const initBidderRegistryProcessor = (
           effective_gas_price: ctx.transactionReceipt?.effectiveGasPrice
         });
       }, undefined, ethconfig, undefined)
+    .onEventFeeTransfer(async (event, ctx) => {
+        const name = 'bidder_registry_fee_transfer'
+        const {
+          amount,
+          recipient
+        } = event.args;
+        ctx.eventLogger.emit(name, {
+          project: project,
+          eventType: FEE_TRANSFER_EVENT,
+          amount: amount,
+          recipient: recipient,
+          from: ctx.transaction?.from,
+          gas_price: ctx.transaction?.gasPrice,
+          max_priority_gas: ctx.transaction?.maxPriorityFeePerGas,
+          max_fee_per_gas: ctx.transaction?.maxFeePerGas,
+          effective_gas_price: ctx.transactionReceipt?.effectiveGasPrice
+      });
+    })
 }
