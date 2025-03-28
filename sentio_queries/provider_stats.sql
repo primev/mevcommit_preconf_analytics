@@ -12,6 +12,17 @@ bls_key_data AS (
         provider
 ),
 slash_data AS (
+    -- TEMPORARY SOLUTION: Create dummy results while provider_registry_funds_slashed table doesn't exist
+    -- This will be the case until a provider gets slashed on mainnet
+    SELECT
+        provider,
+        0 as total_amount_slashed,
+        0 as number_of_slashes,
+        NULL as last_slash_update
+    FROM
+        bls_key_data
+    
+    /* UNCOMMENT WHEN provider_registry_funds_slashed TABLE EXISTS:
     SELECT
         provider,
         SUM(toFloat64(amount) / 1e18) AS total_amount_slashed,
@@ -23,6 +34,7 @@ slash_data AS (
         chain = '1284'
     GROUP BY
         provider
+    */
 ),
 stake_data AS (
     SELECT
@@ -45,12 +57,19 @@ cumulative_eth_staked AS (
         chain = '1284'
 ),
 cumulative_eth_slashed AS (
+    -- TEMPORARY SOLUTION: Return zero while provider_registry_funds_slashed table doesn't exist
+    -- This will be the case until a provider gets slashed on mainnet
+    SELECT
+        0 AS cumulative_eth_slashed
+    
+    /* UNCOMMENT WHEN provider_registry_funds_slashed TABLE EXISTS:
     SELECT
         SUM(toFloat64(amount) / 1e18) AS cumulative_eth_slashed
     FROM
         provider_registry_funds_slashed
     WHERE
         chain = '1284'
+    */
 ),
 provider_counts AS (
     SELECT
