@@ -29,10 +29,10 @@ initMevCommitAVSProcessor(
 )
 
 // mev-commit l1 bridge on Holesky v.0.8.0
-initL1GatewayProcessor(
-  '0x567f0f6d4f7A306c9824d5Ffd0E26f39682cDd7c',
-  EthChainId.HOLESKY
-)
+// initL1GatewayProcessor(
+//   '0x567f0f6d4f7A306c9824d5Ffd0E26f39682cDd7c',
+//   EthChainId.HOLESKY
+// )
 
 // mainnet
 initL1GatewayProcessor(
@@ -41,32 +41,32 @@ initL1GatewayProcessor(
 )
 
 // mev-commit core testnet v.0.8.0
-initOracleProcessor(
-  '0xCd27C2Dc26d37Bb17686F709Db438D3Dc546437C',
-  EthChainId.METIS
-)
-initPreconfManagerProcessor(
-  '0xa254D1A10777e358B0c2e945343664c7309A0D9d',
-  EthChainId.METIS
-)
-initProviderRegistryProcessor(
-  '0x1C2a592950E5dAd49c0E2F3A402DCF496bdf7b67',
-  EthChainId.METIS
-)
-initBidderRegistryProcessor(
-  '0x948eCD70FaeF6746A30a00F30f8b9fB2659e4062',
-  EthChainId.METIS
-) 
+// initOracleProcessor(
+//   '0xCd27C2Dc26d37Bb17686F709Db438D3Dc546437C',
+//   EthChainId.METIS
+// )
+// initPreconfManagerProcessor(
+//   '0xa254D1A10777e358B0c2e945343664c7309A0D9d',
+//   EthChainId.METIS
+// )
+// initProviderRegistryProcessor(
+//   '0x1C2a592950E5dAd49c0E2F3A402DCF496bdf7b67',
+//   EthChainId.METIS
+// )
+// initBidderRegistryProcessor(
+//   '0x948eCD70FaeF6746A30a00F30f8b9fB2659e4062',
+//   EthChainId.METIS
+// ) 
 
-initSettlementGatewayProcessor(
-  '0xFaF6F0d4bbc7bC33a4b403b274aBb82d0E794202',
-  EthChainId.METIS
-)
+// initSettlementGatewayProcessor(
+//   '0xFaF6F0d4bbc7bC33a4b403b274aBb82d0E794202',
+//   EthChainId.METIS
+// )
 
-initBlockTrackerProcessor(
-  '0x0b3b6Cf113959214E313d6Ad37Ad56831acb1776',
-  EthChainId.METIS
-)
+// initBlockTrackerProcessor(
+//   '0x0b3b6Cf113959214E313d6Ad37Ad56831acb1776',
+//   EthChainId.METIS
+// )
 
 
 // mev-commit core mainnet
