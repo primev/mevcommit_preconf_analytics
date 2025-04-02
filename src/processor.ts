@@ -11,6 +11,7 @@ import { initProviderRegistryProcessor } from './mevcommit_core/providerRegistry
 import { initBidderRegistryProcessor } from './mevcommit_core/bidderRegistryProcessor.js'
 import { EthChainId } from '@sentio/sdk/eth'
 import { initBlockTrackerProcessor } from './mevcommit_core/blockTrackerProcessor.js'
+import { initPreconfManagerProcessorV1p1 } from './mevcommit_core/preconfManagerProcessorV1p1.js'
 
 GLOBAL_CONFIG.execution = {
   // required to bypass a false positive error not recognizing an out of supported network endpoint as an archive node. 
@@ -76,6 +77,11 @@ initOracleProcessor(
 )
 initPreconfManagerProcessor(
   '0x9fF03b7Ca0767f069e7AA811E383752267cc47Ec',
+  EthChainId.MOONBEAM
+)
+// Preconf manager address changed with v1.1.0 release
+initPreconfManagerProcessorV1p1(
+  '0x3761bF3932cD22d684A7485002E1424c3aCCD69c',
   EthChainId.MOONBEAM
 )
 initProviderRegistryProcessor(
